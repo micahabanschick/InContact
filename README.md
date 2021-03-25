@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# LOVE LIFE
+
+## Summary
+InContact is an easy-to-use portfolio generator. With InContact, entrepreneurs can market themselves to the fullest extent. No more long job searches. Now your clients and employors will come to YOU! Developed with a React-Redux Framework, and backed by a powerful Rails API, there's almost nothing you can't present with INContact. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +71,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Contributing
+
+Anyone is welcome to report bugs and contribute with pull requests on [this](https://github.com/micahabanschick/InContact.) Github page. 
+
+
+## License 
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
