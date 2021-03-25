@@ -1,6 +1,7 @@
-# LOVE LIFE
+# InContact
 
 ## Summary
+
 InContact is an easy-to-use portfolio generator. With InContact, entrepreneurs can market themselves to the fullest extent. No more long job searches. Now your clients and employors will come to YOU! Developed with a React-Redux Framework, and backed by a powerful Rails API, there's almost nothing you can't present with INContact. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
