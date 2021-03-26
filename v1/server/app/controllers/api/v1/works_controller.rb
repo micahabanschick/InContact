@@ -8,8 +8,13 @@ class Api::V1::WorksController < ApplicationController
     end
 
     def show
-        work = Work.find_by(id: params[:id])
-        render json: WorkSerializer.new(work)
+        @work = Work.find_by(id: params[:id])
+        render json: WorkSerializer.new(@work)
+    end
+
+    def create
+        @work = @user.works.build(work_params)
+        render json: WorkSerializer.new(@work)
     end
 
     private

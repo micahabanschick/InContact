@@ -8,8 +8,13 @@ class Api::V1::Admin::ProjectsController < ApplicationController
     end
 
     def show
-        project = Project.find_by(id: params[:id])
-        render json: ProjectSerializer.new(project)
+        @project = Project.find_by(id: params[:id])
+        render json: ProjectSerializer.new(@project)
+    end
+
+    def create
+        @project = @user.projects.build(project_params)
+        render json: ProjectSerializer.new(@project)
     end
 
     private
