@@ -24,6 +24,12 @@ class Api::V1::Admin::WorksController < ApplicationController
         render json: UserSerializer.new(@work)
     end
 
+    def destroy
+        @work = Work.find(params[:id])
+        @work.destroy
+        render json: {message: 'This Work is successfully deleted'}
+    end
+
     private
 
     def set_user

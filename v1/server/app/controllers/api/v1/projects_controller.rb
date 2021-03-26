@@ -24,6 +24,11 @@ class Api::V1::ProjectsController < ApplicationController
         render json: UserSerializer.new(@project)
     end
 
+    def destroy
+        @project = Project.find(params[:id])
+        @project.destroy
+        render json: {message: 'This Project is successfully deleted'}
+    end
 
     private
 
