@@ -1,5 +1,5 @@
 class WorkSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :title, :organization, :length
+  attributes :id, :title, :organization, :length
   belongs_to :user
 end
