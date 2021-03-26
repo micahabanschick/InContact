@@ -1,6 +1,6 @@
-class CreateApiV1Works < ActiveRecord::Migration[6.0]
+class CreateWorks < ActiveRecord::Migration[6.0]
   def change
-    create_table :api_v1_works do |t|
+    create_table :works do |t|
       t.string :title
       t.string :organization
       t.date :length

@@ -1,2 +1,4 @@
-class Api::V1::User < ApplicationRecord
+class User < ApplicationRecord
+    has_many :works 
+    has_many :projects 
 end

@@ -1,2 +1,2 @@
-class Api::V1::WorksController < ApplicationController
+class WorksController < ApplicationController
 end
