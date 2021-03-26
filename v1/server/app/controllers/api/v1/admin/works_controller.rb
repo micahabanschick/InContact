@@ -17,6 +17,13 @@ class Api::V1::Admin::WorksController < ApplicationController
         render json: WorkSerializer.new(@work)
     end
 
+    def update
+        @work = Work.find(params[:id])
+        @work.update(work_params)
+        @work.save
+        render json: UserSerializer.new(@work)
+    end
+
     private
 
     def set_user

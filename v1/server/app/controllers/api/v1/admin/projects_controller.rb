@@ -17,6 +17,13 @@ class Api::V1::Admin::ProjectsController < ApplicationController
         render json: ProjectSerializer.new(@project)
     end
 
+    def update
+        @project = Project.find(params[:id])
+        @project.update(project_params)
+        @project.save
+        render json: UserSerializer.new(@project)
+    end
+
     private
 
     def set_user

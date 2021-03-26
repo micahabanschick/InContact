@@ -16,6 +16,16 @@ class Api::V1::UsersController < ApplicationController
         render json: UserSerializer.new(@user, options)
     end
 
+    def update
+        @user = User.find(params[:id])
+        @user.update(user_params)
+        @user.save
+        options = {
+            include: [:works, :projects]
+        }
+        render json: UserSerializer.new(@user, options)
+    end
+
     private
 
     def user_params
