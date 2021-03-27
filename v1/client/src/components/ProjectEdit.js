@@ -20,7 +20,7 @@ class ProjectEdit extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    let project = {...this.state, id: this.props.project.id, userId: this.props.user.id}
+    let project = {...this.state, id: this.props.project.id, userId: this.props.project.user.id}
     this.props.editProject(project)
     this.setState({
         title: '',

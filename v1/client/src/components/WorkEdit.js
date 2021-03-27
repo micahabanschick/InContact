@@ -18,7 +18,7 @@ class WorkEdit extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    let work = {...this.state, id: this.props.work.id, userId: this.props.user.id}
+    let work = {...this.state, id: this.props.work.id, userId: this.props.project.user.id}
     this.props.editProject(work)
     this.setState({
         title: '',
