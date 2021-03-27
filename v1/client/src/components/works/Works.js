@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {deleteWork} from '../actions/deleteWork'
+import {deleteWork} from '../../actions/works/deleteWork'
 
 const Works = (props) => {
 

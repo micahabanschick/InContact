@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {editWork} from '../actions/editWork'
+import {editWork} from '../../actions/editWork'
 
 class WorkEdit extends Component {
 

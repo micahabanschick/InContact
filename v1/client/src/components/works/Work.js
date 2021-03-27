@@ -1,7 +1,7 @@
 import React from 'react'
-import WorkEdit from './WorkEdit'
+import WorkEdit from '../WorkEdit'
 import {connect} from 'react-redux'
-import {deleteWork} from '../actions/deleteWork'
+import {deleteWork} from '../../actions/deleteWork'
 
 const Work = (props) => {
 

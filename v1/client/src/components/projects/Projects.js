@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {deleteProject} from '../actions/deleteProject'
+import {deleteProject} from '../../actions/projects/deleteProject'
 
 const Projects = (props) => {
 

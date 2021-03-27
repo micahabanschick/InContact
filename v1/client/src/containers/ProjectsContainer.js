@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ProjectInput from '../components/ProjectInput'
-import Projects from '../components/Projects'
+import Projects from '../components/projects/Projects'
 
 class ProjectsContainer extends Component {
 

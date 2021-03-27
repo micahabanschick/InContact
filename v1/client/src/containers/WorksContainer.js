@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import WorkInput from '../components/WorkInput'
-import Works from '../components/Works'
+import Works from '../components/works/Works'
 
 class WorksContainer extends Component {
 
