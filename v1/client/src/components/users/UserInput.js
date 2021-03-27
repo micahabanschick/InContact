@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {editUser} from '../actions/editUser'
+import {addUser} from '../../actions/users/addUser'
 
-class UserEdit extends Component {
+class UserInput extends Component {
 
   state = {
     name: '',
@@ -18,12 +18,11 @@ class UserEdit extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    let user = {...this.state, id: this.props.user.id}
-    this.props.editUser(user)
+    this.props.addUser(this.state)
     this.setState({
-        name: '',
-        password: '',
-        email: ''
+      name: '',
+      password: '',
+      email: ''
     })
   }
 
@@ -47,9 +46,4 @@ class UserEdit extends Component {
   }
 }
 
-UserEdit.defaultProps = {
-  users: {}
-}
-
-
-export default connect(null, {editUser})(UserEdit)
+export default connect(null, {addUser})(UserInput)
