@@ -1,6 +1,6 @@
 export const editWork = (data) => {
     return (dispatch) => {
-      fetch(`http://localhost:3000/api/v1/users/${data.user_id}/works/${data.id}`, {
+      fetch(`http://localhost:3000/api/v1/users/${data.userId}/works/${data.id}`, {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'

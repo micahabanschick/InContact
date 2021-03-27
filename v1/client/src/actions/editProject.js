@@ -1,6 +1,6 @@
 export const editProject = (data) => {
     return (dispatch) => {
-      fetch(`http://localhost:3000/api/v1/users/${data.user_id}/projects/${data.id}`, {
+      fetch(`http://localhost:3000/api/v1/users/${data.userId}/projects/${data.id}`, {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
