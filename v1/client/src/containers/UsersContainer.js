@@ -5,6 +5,7 @@ import {fetchUsers} from '../actions/users/fetchUsers'
 import Users from '../components/users/Users'
 import User from '../components/users/User'
 import UserInput from '../components/users/UserInput'
+import NavBar from '../components/NavBar'
 
 class UsersContainer extends Component {
 
@@ -17,6 +18,7 @@ class UsersContainer extends Component {
           <div>
             <h1>Inside Users Container</h1>
             {console.log(this.props)}
+            <NavBar/>
             <Switch>
               <Route path='/users/new' component={UserInput}/>
               <Route path='/users/:id' render={(routerProps) => <User {...routerProps} users={this.props.users}/>}/>
