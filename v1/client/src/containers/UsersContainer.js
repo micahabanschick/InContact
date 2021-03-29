@@ -15,12 +15,13 @@ class UsersContainer extends Component {
   render() {
       return (
           <div>
+            <h1>Inside Users Container</h1>
+            {console.log(this.props)}
             <Switch>
               <Route path='/users/new' component={UserInput}/>
               <Route path='/users/:id' render={(routerProps) => <User {...routerProps} users={this.props.users}/>}/>
-              <Route path='/users' render={(routerProps) => <Users {...routerProps} users={this.props.users}/>}/>
-            </Switch>
-
+              <Route exact path='/users' render={(routerProps) => <Users {...routerProps} users={this.props.users}/>}/>
+            </Switch>         
           </div>
       )
   }

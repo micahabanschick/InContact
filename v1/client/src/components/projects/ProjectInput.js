@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {addProject} from '../actions/addProject'
+import {addProject} from '../../actions/projects/addProject'
 
 class ProjectInput extends Component {
 

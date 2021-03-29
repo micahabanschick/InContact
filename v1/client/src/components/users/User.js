@@ -1,7 +1,8 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
 import UserEdit from './UserEdit'
-import ProjectsContainer from '../containers/ProjectsContainer'
-import WorksContainer from '../containers/WorksContainer'
+import ProjectsContainer from '../../containers/ProjectsContainer'
+import WorksContainer from '../../containers/WorksContainer'
 
 const User = (props) => {
 
@@ -16,6 +17,8 @@ const User = (props) => {
       <h2>
         {user ? user.name : null} - {user ? user.email : null}
       </h2>
+      {
+      }
       <ProjectsContainer user={user}/><br/>
       <WorksContainer user={user}/><br/>
       <h4>Edit User</h4>

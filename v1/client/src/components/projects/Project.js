@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectEdit from '../ProjectEdit'
+import ProjectEdit from './ProjectEdit'
 import {connect} from 'react-redux'
 import {deleteProject} from '../../actions/projects/deleteProject'
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {editProject} from '../../actions/editProject'
+import {editProject} from '../../actions/projects/editProject'
 
 class ProjectEdit extends Component {
 
