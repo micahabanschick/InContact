@@ -11,25 +11,28 @@ class UserInput extends Component {
   }
 
   handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
+    this.setState(
+      {[event.target.name]: event.target.value},
+      () => console.log('Login: ' + JSON.stringify(this.state))
+    )
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.addUser(this.state)
+    console.log(this.state)
     this.setState({
-      name: '',
-      password: '',
-      email: ''
+      // {name, password, email} = this.state
+      name: this.state.name,
+      password: this.state.password,
+      email: this.state.email
     })
   }
 
   render() {
     return (
         <div>
-          <h1>Inside User Input</h1>
+          <h2>Inside User Input</h2>
           <form onSubmit={this.handleSubmit}>
             <label>Name: </label>
             <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}/>

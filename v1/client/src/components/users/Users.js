@@ -1,7 +1,7 @@
 import React from 'react'
-import {Route, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 // import userReducer from '../../reducers/userReducer'
-import User from './User'
+// import User from './User'
 
 const Users = (props) => {
 
