@@ -1,12 +1,17 @@
 // import { v5 as uuidv5 } from 'uuid';
 
-export default function usersReducer(state = {users: []}, action) {
+const initialState = {
+  index: [],
+  isAdmin: false
+};
+
+export default function usersReducer(state = initialState, action) {
   switch (action.type) {
     case 'FETCH_USERS':
       return {users: action.payload}
     case 'ADD_USER':
       console.log(state)
-      return {...state, users: [...state.users, action.payload]}
+      return {...state, ...action.payload.data, index: [...state.index, action.payload]}
     case 'EDIT_USER':
       let users = state.users.map(user => {
         if (user.id === action.payload.id) {

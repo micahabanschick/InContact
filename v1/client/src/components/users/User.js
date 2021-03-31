@@ -8,7 +8,7 @@ const User = (props) => {
 
   console.log(props)
   // let account = props.accounts[props.match.params.id - 1]
-  let user = props.users.filter(user => user.id === props.match.params.id)[0]
+  let user = props.user.index.filter(user => user.id === props.match.params.id)[0]
 
   console.log(user)
   return (

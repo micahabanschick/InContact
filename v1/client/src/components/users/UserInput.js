@@ -20,7 +20,7 @@ class UserInput extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.addUser(this.state)
-    console.log(this.state)
+    // console.log(this.state)
     this.setState({
       // {name, password, email} = this.state
       name: this.state.name,

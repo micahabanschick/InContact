@@ -1,4 +1,11 @@
-export default function projectsReducer(state = [], action) {
+const initialState = {
+  index: [],
+  users: [],
+  username: '',
+  isAdmin: false
+};
+
+export default function projectsReducer(state = initialState, action) {
     switch (action.type) {
         case 'ADD_PROJECT':
             let usersTwo = state.users.map(user => {
@@ -8,7 +15,7 @@ export default function projectsReducer(state = [], action) {
                 return user
               }
             })
-            return {...state, users: usersTwo}
+            return {...state, ...action.payload.data, index: [...state.index, action.payload], user: usersTwo}
         case 'EDIT_PROJECT':
             let usersThree = state.users.map(user => {
               if (user.id === action.payload.id) {

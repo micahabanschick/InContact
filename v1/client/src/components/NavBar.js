@@ -7,6 +7,9 @@ const NavBar = (props) => {
     <div>
       <Link to='/users' style={{paddingRight: '10px'}}>Users  </Link>
       <Link to='/users/new'> Add User</Link>
+      {
+      // <Link to='/users/:id'>Home</Link>
+      }    
     </div>
 
   )

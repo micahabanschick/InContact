@@ -7,8 +7,9 @@ const Users = (props) => {
 
   return (
     <div>
+      {console.log(props)}
       {
-        props.users.map(user => 
+        props.user.index.map(user => 
           <li key={user.id}>
             <Link to={`/users/${user.id}`}>{user.name}</Link>
           </li>

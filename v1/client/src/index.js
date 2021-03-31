@@ -12,10 +12,16 @@ import App from './App';
 
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // const initialState = {}
+// const initialState = {
+//   userId: null,
+//   users: [],
+//   username: '',
+//   logo: ''
+// };
 
 const rootReducer = combineReducers({
-  users: usersReducer,
-  projects: projectsReducer,
+  user: usersReducer,
+  project: projectsReducer,
   work: worksReducer
 })
 

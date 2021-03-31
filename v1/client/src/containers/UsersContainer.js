@@ -17,12 +17,14 @@ class UsersContainer extends Component {
       return (
           <div>
             <h1>Inside Users Container</h1>
-            {console.log(this.props)}
+            {
+              console.log(this.props)
+            }
             <NavBar/>
             <Switch>
               <Route path='/users/new' component={UserInput}/>
-              <Route path='/users/:id' render={(routerProps) => <User {...routerProps} users={this.props.users}/>}/>
-              <Route exact path='/users' render={(routerProps) => <Users {...routerProps} users={this.props.users}/>}/>
+              <Route path='/users/:id' render={(routerProps) => <User {...routerProps} user={this.props.user}/>}/>
+              <Route exact path='/users' render={(routerProps) => <Users {...routerProps} user={this.props.user}/>}/>
             </Switch>         
           </div>
       )
@@ -31,7 +33,7 @@ class UsersContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    users: state.users
+    user: state.user
   }
 }
 
