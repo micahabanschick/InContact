@@ -9,6 +9,7 @@ class App extends Component {
       <div className="App">
         <h1>Inside App</h1>
         <UsersContainer/>
+        <h1>Outside and After UsersContainer</h1>
       </div>
     );
   }

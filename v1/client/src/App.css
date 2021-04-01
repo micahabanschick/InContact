@@ -1,5 +1,21 @@
+body  {
+  /* background: rgba(73, 179, 82, 0.5); */
+  background-image: linear-gradient(to bottom right, rgba(74, 33, 107, 0.3), rgba(0, 168, 14, 0.3));
+}
+
 .App {
   text-align: center;
+  /* background: rgba(73, 179, 82, 0.5); */
+  background-image: linear-gradient(to bottom right, rgba(135, 216, 141, 0.4), rgba(53, 129, 59, 0.4));
+}
+
+.App nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgba(73, 79, 82, 0.6);
+  color: white;
 }
 
 .App-logo {
