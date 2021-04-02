@@ -21,17 +21,24 @@ class UsersContainer extends Component {
 
   render() {
       return (
-          <div>
+          <div id="outer-container" styles="height: 100%;">
+          {
+            console.log(this.props)
+          }
+          
+          <NavBar 
+            user={this.props.user} 
+            pageWrapId={"page-wrap"} 
+            outerContainerId={"outer-container"} 
+          />
+          
+          <div id="page-wrap" styles="height: 100%; overflow: auto;">
             <h1>Inside Users Container</h1>
-            {
-              console.log(this.props)
-            }
-            <NavBar user={this.props.user}/>
             <Switch>
               <Route exact path='/users/:id/projects' render={(routerProps) => <Projects {...routerProps} project={this.props.project}/>}/>
               <Route path='/users/:id/projects/:projetId' render={(routerProps) => <Project {...routerProps} project={this.props.project}/>}/>
               <Route path='/users/:id/projects/new' render={(routerProps) => <ProjectInput {...routerProps} project={this.props.project}/>}/>
-
+              
               <Route exact path='/users/:id/works' render={(routerProps) => <Works {...routerProps} work={this.props.work}/>}/>
               <Route path='/users/:id/works/:workId' render={(routerProps) => <Work {...routerProps} work={this.props.work}/>}/>
               <Route path='/users/:id/works/new' render={(routerProps) => <WorkInput {...routerProps} work={this.props.work}/>}/>
@@ -41,6 +48,7 @@ class UsersContainer extends Component {
               <Route exact path='/users' render={(routerProps) => <Users {...routerProps} user={this.props.user}/>}/>
             </Switch>         
           </div>
+        </div>
       )
   }
 }

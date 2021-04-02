@@ -6,7 +6,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" styles="height: 100%;">
         <h1>Inside App</h1>
         <UsersContainer/>
         <h1>Outside and After UsersContainer</h1>
