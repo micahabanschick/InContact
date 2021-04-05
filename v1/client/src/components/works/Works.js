@@ -8,23 +8,30 @@ class Works extends Component {
     state = {}
     
     handleDelete = (work) => {
-        this.props.deleteWork(work.id, work.user_id)
+        this.props.deleteWork(work.id, work.userId)
     }
 
     render() {
-        return (
-            <div>
-                {
-                    this.props.projects && this.props.works.map(work =>
-                    <li key={work.id}>
-                        <Link to={`/works/${work.id}`}>{work.title} - ${work.orgaanization}</Link>
-                        <button onClick={() => this.handleDelete(work)}>Delete</button>
-                    </li> 
-                    )
-                }
-            </div>
+        if (!this.props.index.length > 0) {
+            return (
+                <h2>No Works have been recorded.</h2>
+            )
+        } else {
+            return (
+                <div>
+                {console.log(this)}
+                    { 
+                        this.props.index.map(work => 
+                            <li key={work.id}>
+                            <Link to={`/works/${work.id}`}>{work.title} - ${work.organization}</Link>
+                            <button onClick={() => this.handleDelete(work)}>Delete</button>
+                            </li> 
+                        )
+                    }
+                </div>
 
-        )
+            )
+        }
     }
 }
 
