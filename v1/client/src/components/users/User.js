@@ -5,14 +5,14 @@ import ProjectsContainer from '../../containers/ProjectsContainer'
 import WorksContainer from '../../containers/WorksContainer'
 
 const User = (props) => {
-
+// debugger
   console.log(props)
   // let account = props.accounts[props.match.params.id - 1]
   let user = props.user.index.filter(user => user.id === props.match.params.id)[0]
 
   console.log(user)
   return (
-
+    
     <div>
       <h2>
         {user ? user.name : null} - {user ? user.email : null}

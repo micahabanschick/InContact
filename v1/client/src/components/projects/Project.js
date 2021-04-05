@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {deleteProject} from '../../actions/projects/deleteProject'
 
 const Project = (props) => {
-
+// debugger
   console.log(props)
   // let account = props.accounts[props.match.params.id - 1]
   let project = props.projects.filter(project => project.id === props.match.params.id)[0]

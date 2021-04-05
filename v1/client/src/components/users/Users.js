@@ -7,7 +7,9 @@ const Users = (props) => {
 
   return (
     <div>
-      {console.log(props)}
+      {
+        // console.log(props)
+      }
       {
         props.user.index.map(user => 
           <li key={user.id}>
