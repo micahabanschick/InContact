@@ -1,5 +1,5 @@
 import React from 'react'
-import reduxLogo from '../assets/logo512.png'
+import Slideshow from './Slideshow'
 
 const Welcome = (props) => {
 
@@ -15,10 +15,10 @@ const Welcome = (props) => {
         <br/><br/>
         Enjoy!
       </p>
-        <img src={reduxLogo} alt="redux logo"/>
-        <img src={reduxLogo} alt="redux logo"/>
+        
       {
       }
+      <Slideshow/>
     </div>
   )
 
