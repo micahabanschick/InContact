@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-import {scaleRotate as Menu} from 'react-burger-menu';
+import {slide as Menu} from 'react-burger-menu';
 import {decorator as reduxBurgerMenu} from 'redux-burger-menu';
 
 const ReduxBurgerMenu = reduxBurgerMenu(Menu);
@@ -59,28 +59,29 @@ class NavBar extends Component {
         }
     }
 
-    render() {
-        if (!this.props.user.id) {
-            return (
-                <ReduxBurgerMenu styles={this.styles} isOpen={ this.props.isOpen }>
-                    <Link className="menu-item" style={this.navStyle} to='/users/new'>Add User</Link>
-                    <Link className="menu-item" style={this.navStyle} to='/users/:id'>Home</Link>
-                </ReduxBurgerMenu>
-            )
-        } else {
-            return (
-                <ReduxBurgerMenu styles={this.styles} isOpen={ this.props.isOpen }>
-                    <Link className="menu-item" style={this.navStyle} to='/users/:id/projects'>Projects  </Link>
-                    <Link className="menu-item" style={this.navStyle} to='/users/:id/projects/new'> Add Project</Link>
-            
-                    <Link className="menu-item" style={this.navStyle} to='/users/:id/works'>Works  </Link>
-                    <Link className="menu-item" style={this.navStyle} to='/users/:id/works/new'> Add Work</Link>
-            
-                    <Link className="menu-item" style={this.navStyle} to='/users/:id'>Home</Link>
-                </ReduxBurgerMenu>
-            )
-        }
+  render() {
+    console.log(this.props)
+    if (!this.props.user.id) {
+      return (
+        <ReduxBurgerMenu styles={this.styles} isOpen={ this.props.isOpen }>
+          <Link className="menu-item" style={this.navStyle} to='/'>Wecome</Link>
+          <Link className="menu-item" style={this.navStyle} to='/users/new'>Signup/Signin</Link>
+        </ReduxBurgerMenu>
+      )
+    } else {
+      return (
+        <ReduxBurgerMenu styles={this.styles} isOpen={ this.props.isOpen }>
+          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}`}>Home</Link>
+
+          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/projects`}>Projects  </Link>
+          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/projects/new`}> Add Project</Link>
+  
+          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/works`}>Works  </Link>
+          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/works/new`}> Add Work</Link>
+        </ReduxBurgerMenu>
+      )
     }
+  }
 }
   
 export default NavBar

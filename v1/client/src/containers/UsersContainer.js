@@ -1,22 +1,22 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {Route, Switch} from 'react-router-dom'
-import {fetchUsers} from '../actions/users/fetchUsers'
-import Users from '../components/users/Users'
-import User from '../components/users/User'
+import {Route, Switch, Redirect} from 'react-router-dom'
+import Welcome from '../components/Welcome'
 import UserInput from '../components/users/UserInput'
-import Projects from '../components/projects/Projects'
-import Project from '../components/projects/Project'
-import ProjectInput from '../components/projects/ProjectInput'
-import Works from '../components/works/Works'
-import Work from '../components/works/Work'
-import WorkInput from '../components/works/WorkInput'
+import {fetchUsers} from '../actions/users/fetchUsers'
 import NavBar from '../components/NavBar'
+import MyRoutes from '../components/MyRoutes'
 
 class UsersContainer extends Component {
 
   componentDidMount() {
     this.props.fetchUsers()
+    // const location = {
+    //   pathname: '/login',
+    //   state: { from: {pathname: '/Main'} }
+    // }
+    // console.log(this.props.history)
+    // this.props.history.push(location);
   }
 
   render() {
@@ -35,18 +35,10 @@ class UsersContainer extends Component {
           <div id="page-wrap" styles="height: 100%; overflow: auto;">
             <h1>Inside Users Container</h1>
             <Switch>
-              <Route exact path='/users/:id/projects' render={(routerProps) => <Projects {...routerProps} project={this.props.project}/>}/>
-              <Route path='/users/:id/projects/:projetId' render={(routerProps) => <Project {...routerProps} project={this.props.project}/>}/>
-              <Route path='/users/:id/projects/new' render={(routerProps) => <ProjectInput {...routerProps} project={this.props.project}/>}/>
-              
-              <Route exact path='/users/:id/works' render={(routerProps) => <Works {...routerProps} work={this.props.work}/>}/>
-              <Route path='/users/:id/works/:workId' render={(routerProps) => <Work {...routerProps} work={this.props.work}/>}/>
-              <Route path='/users/:id/works/new' render={(routerProps) => <WorkInput {...routerProps} work={this.props.work}/>}/>
-              
-              <Route path='/users/new' component={UserInput}/>
-              <Route exact path='/users/:id' render={(routerProps) => <User {...routerProps} user={this.props.user}/>}/>
-              <Route exact path='/users' render={(routerProps) => <Users {...routerProps} user={this.props.user}/>}/>
-            </Switch>         
+              <Route exact path="/" component={Welcome}/>
+              <Route exact path='/users/new' component={UserInput}/>
+              <MyRoutes user={this.props.user}/>        
+            </Switch> 
           </div>
         </div>
       )
