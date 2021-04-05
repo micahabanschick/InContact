@@ -13,7 +13,9 @@ class Api::V1::ProjectsController < ApplicationController
     end
 
     def create
+        # binding.pry
         @project = @user.projects.build(project_params)
+        @project.save
         render json: ProjectSerializer.new(@project)
     end
 

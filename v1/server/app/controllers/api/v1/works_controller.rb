@@ -14,6 +14,7 @@ class Api::V1::WorksController < ApplicationController
 
     def create
         @work = @user.works.build(work_params)
+        @work.save 
         render json: WorkSerializer.new(@work)
     end
 

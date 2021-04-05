@@ -17,6 +17,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def update
+        # binding.pry
         @user = User.find(params[:id])
         @user.update(user_params)
         @user.save
