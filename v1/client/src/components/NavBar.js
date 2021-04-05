@@ -41,7 +41,7 @@ class NavBar extends Component {
         },
         bmMenu: {
           background: '#373a47',
-          padding: '2.5em 1.5em 0',
+          padding: '2.5em 1.5em 35em', //creates a smaller text box and reduces whitespce between items for easier readability
           fontSize: '1.15em'
         },
         bmMorphShape: {
@@ -76,12 +76,13 @@ class NavBar extends Component {
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/contact`}>Contact</Link>
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/resume`}>Resume</Link>
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}`}>User</Link>
-
-          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/projects`}>Projects</Link>
-          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/projects/new`}>Add Project</Link>
+          {
+          // <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/projects`}>Projects</Link>
+          // <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/projects/new`}>Add Project</Link>
   
-          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/works`}>Works</Link>
-          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/works/new`}>Add Work</Link>
+          // <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/works`}>Works</Link>
+          // <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/works/new`}>Add Work</Link>
+          }
         </ReduxBurgerMenu>
       )
     }

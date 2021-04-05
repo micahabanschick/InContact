@@ -1,4 +1,5 @@
 import React from 'react'
+import WorksContainer from '../containers/WorksContainer'
 
 const Resume = (props) => {
 // debugger
@@ -10,15 +11,12 @@ const Resume = (props) => {
   return (
     
     <div>
-      <h1>
-        Resume:
+      <h2>
         {user ? user.name : null} - {user ? user.email : null}
-      </h1>
+      </h2>
       {
       }
-      <h2>
-        Works:
-      </h2>
+      <WorksContainer user={user}/><br/>
     </div>
   )
 
