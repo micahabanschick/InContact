@@ -72,14 +72,14 @@ class NavBar extends Component {
       return (
         <ReduxBurgerMenu styles={this.styles} isOpen={ this.props.isOpen }>
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}`}>Home</Link>
+          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/about`}>About</Link>
+          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/contact`}>Contact</Link>
 
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/projects`}>Projects</Link>
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/projects/new`}>Add Project</Link>
   
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/works`}>Works</Link>
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/works/new`}>Add Work</Link>
-
-          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/about`}>About</Link>
         </ReduxBurgerMenu>
       )
     }
