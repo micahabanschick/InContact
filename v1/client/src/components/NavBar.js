@@ -74,6 +74,7 @@ class NavBar extends Component {
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}`}>Home</Link>
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/about`}>About</Link>
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/contact`}>Contact</Link>
+          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/resume`}>Resume</Link>
 
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/projects`}>Projects</Link>
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/projects/new`}>Add Project</Link>

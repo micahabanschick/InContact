@@ -10,6 +10,7 @@ import Work from './works/Work'
 import WorkInput from './works/WorkInput'
 import About from '../pages/About'
 import Contact from '../pages/Contact'
+import Resume from '../pages/Resume'
 
 const MyRoutes = (props) => {
 
@@ -21,6 +22,7 @@ const MyRoutes = (props) => {
     <Switch>
       <Route exact path='/users/:id/about' render={(routerProps) => <About {...routerProps} user={props.user}/>}/>
       <Route exact path='/users/:id/contact' render={(routerProps) => <Contact {...routerProps} user={props.user}/>}/>
+      <Route exact path='/users/:id/resume' render={(routerProps) => <Resume {...routerProps} user={props.user}/>}/>
     
       <Route exact path='/users/:userId/projects' render={(routerProps) => <Projects {...routerProps} project={props.project}/>}/>
       <Route exact path='/users/:userId/projects/new' render={(routerProps) => <ProjectInput {...routerProps} project={props.project}/>}/>
