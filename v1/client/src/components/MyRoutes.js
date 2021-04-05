@@ -11,6 +11,7 @@ import WorkInput from './works/WorkInput'
 import About from '../pages/About'
 import Contact from '../pages/Contact'
 import Resume from '../pages/Resume'
+import Home from '../pages/Home'
 
 const MyRoutes = (props) => {
 
@@ -20,6 +21,7 @@ const MyRoutes = (props) => {
 
   return (
     <Switch>
+      <Route exact path='/users/:id/home' render={(routerProps) => <Home {...routerProps} user={props.user}/>}/>
       <Route exact path='/users/:id/about' render={(routerProps) => <About {...routerProps} user={props.user}/>}/>
       <Route exact path='/users/:id/contact' render={(routerProps) => <Contact {...routerProps} user={props.user}/>}/>
       <Route exact path='/users/:id/resume' render={(routerProps) => <Resume {...routerProps} user={props.user}/>}/>
