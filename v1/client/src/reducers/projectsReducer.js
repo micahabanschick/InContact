@@ -1,6 +1,6 @@
 const initialState = {
   index: [],
-  users: [],
+  user: [],
   username: '',
   isAdmin: false
 };
