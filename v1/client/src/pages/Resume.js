@@ -5,7 +5,7 @@ const Resume = (props) => {
 // debugger
   console.log(props)
   // let account = props.accounts[props.match.params.id - 1]
-  let user = props.user.index.filter(user => user.id === props.match.params.id)[0]
+  let user = props.user//.index.filter(user => user.id === props.match.params.id)[0]
 
   console.log(user)
   return (
@@ -16,7 +16,7 @@ const Resume = (props) => {
       </h2>
       {
       }
-      <WorksContainer user={user}/><br/>
+      <WorksContainer user={user} work={props.work}/><br/>
     </div>
   )
 

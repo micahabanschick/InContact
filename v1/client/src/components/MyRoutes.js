@@ -24,7 +24,7 @@ const MyRoutes = (props) => {
       <Route exact path='/users/:id/home' render={(routerProps) => <Home {...routerProps} user={props.user}/>}/>
       <Route exact path='/users/:id/about' render={(routerProps) => <About {...routerProps} user={props.user}/>}/>
       <Route exact path='/users/:id/contact' render={(routerProps) => <Contact {...routerProps} user={props.user}/>}/>
-      <Route exact path='/users/:id/resume' render={(routerProps) => <Resume {...routerProps} user={props.user}/>}/>
+      <Route exact path='/users/:id/resume' render={(routerProps) => <Resume {...routerProps} user={props.user} work={props.work}/>}/>
     
       <Route exact path='/users/:userId/projects' render={(routerProps) => <Projects {...routerProps} project={props.project}/>}/>
       <Route exact path='/users/:userId/projects/new' render={(routerProps) => <ProjectInput {...routerProps} project={props.project}/>}/>

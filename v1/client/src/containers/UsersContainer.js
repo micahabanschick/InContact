@@ -37,7 +37,7 @@ class UsersContainer extends Component {
             <Switch>
               <Route exact path="/" component={Welcome}/>
               <Route exact path='/users/new' component={UserInput}/>
-              <MyRoutes user={this.props.user}/>        
+              <MyRoutes user={this.props.user} project={this.props.project} work={this.props.work}/>        
             </Switch> 
           </div>
         </div>
@@ -47,7 +47,9 @@ class UsersContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user
+    user: state.user,
+    project: state.project,
+    work: state.work
   }
 }
 

@@ -21,13 +21,14 @@ class ProjectInput extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.addProject(this.state, this.props.user.id)
-    this.setState({
-      title: '',
-      description: '',
-      demo: '',
-      tools: '',
-      length: ''
-    })
+    console.log(this)
+    // this.setState({
+    //   title: '',
+    //   description: '',
+    //   demo: '',
+    //   tools: '',
+    //   length: ''
+    // })
   }
 
   render() {
@@ -57,5 +58,12 @@ class ProjectInput extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    user: state.user,
+    project: state.project
+  }
+}
 
-export default connect(null, {addProject})(ProjectInput)
+
+export default connect(mapStateToProps, {addProject})(ProjectInput)
