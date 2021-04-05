@@ -9,7 +9,10 @@ class WorksContainer extends Component {
     return (
       <div>
           <WorkInput user={this.props.user}/><br/>
-          <Works works={this.props.user && this.props.user.works}/>
+          {
+            // <Works works={this.props.user && this.props.user.works}/>
+            console.log(this.props.match)
+          }
       </div>
 
     )

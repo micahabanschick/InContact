@@ -9,8 +9,10 @@ class ProjectsContainer extends Component {
     return (
       <div>
           <ProjectInput user={this.props.user}/><br/>
-          <Projects projects={this.props.user && this.props.user.projects}/>
-          {console.log(this.props.match)}
+          {
+            // <Projects projects={this.props.user && this.props.user.projects}/>
+            console.log(this.props.match)
+          }
       </div>
 
     )
