@@ -18,12 +18,14 @@ class UserEdit extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    console.log(this.props)
+    console.log(this.state)
     let user = {...this.state, id: this.props.user.id}
     this.props.editUser(user)
     this.setState({
-        name: '',
-        password: '',
-        email: ''
+      name: this.state.name,
+      password: this.state.password,
+      email: this.state.email
     })
   }
 
@@ -48,8 +50,14 @@ class UserEdit extends Component {
 }
 
 UserEdit.defaultProps = {
-  users: {}
+  user: {}
+}
+
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
 }
 
 
-export default connect(null, {editUser})(UserEdit)
+export default connect(mapStateToProps, {editUser})(UserEdit)

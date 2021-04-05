@@ -8,7 +8,7 @@ const User = (props) => {
 // debugger
   console.log(props)
   // let account = props.accounts[props.match.params.id - 1]
-  let user = props.user.index.filter(user => user.id === props.match.params.id)[0]
+  let user = props.user//.index.filter(user => user.id === props.match.params.id)[0]
 
   console.log(user)
   return (
@@ -19,8 +19,8 @@ const User = (props) => {
       </h2>
       {
       }
-      <ProjectsContainer user={user}/><br/>
-      <WorksContainer user={user}/><br/>
+      <ProjectsContainer user={user} project={props.project}/><br/>
+      <WorksContainer user={user} work={props.work}/><br/>
       <h4>Edit User</h4>
       <UserEdit user={user}/>
     </div>
