@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {Route, Switch, Redirect} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Welcome from '../components/Welcome'
 import UserInput from '../components/users/UserInput'
 import {fetchUsers} from '../actions/users/fetchUsers'
