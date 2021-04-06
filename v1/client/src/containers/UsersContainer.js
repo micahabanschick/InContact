@@ -21,7 +21,7 @@ class UsersContainer extends Component {
 
   render() {
       return (
-          <div id="outer-container" styles="height: 100%;">
+        <div id="outer-container" styles="height: 100%;">
           {
             console.log(this.props)
           }
@@ -36,7 +36,7 @@ class UsersContainer extends Component {
             <h1>Inside Users Container</h1>
             <Switch>
               <Route exact path="/" component={Welcome}/>
-              <Route exact path='/users/new' component={UserInput}/>
+              <Route exact path='/users/new' render={(routerProps) => <UserInput {...routerProps} user={this.props.user} project={this.props.project} work={this.props.work}/>}/>
               <MyRoutes user={this.props.user} project={this.props.project} work={this.props.work}/>        
             </Switch> 
           </div>
@@ -47,7 +47,11 @@ class UsersContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user,
+    user: {
+      ...state.user,
+      project: state.project,
+      work: state.work
+    },
     project: state.project,
     work: state.work
   }
