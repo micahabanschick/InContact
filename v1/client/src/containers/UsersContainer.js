@@ -33,11 +33,35 @@ class UsersContainer extends Component {
           />
           
           <div id="page-wrap" styles="height: 100%; overflow: auto;">
+
             <h1>Inside Users Container</h1>
+
             <Switch>
-              <Route exact path="/" component={Welcome}/>
-              <Route exact path='/users/new' render={(routerProps) => <UserInput {...routerProps} user={this.props.user} project={this.props.project} work={this.props.work}/>}/>
-              <MyRoutes user={this.props.user} project={this.props.project} work={this.props.work}/>        
+
+              <Route 
+                exact 
+                path="/" 
+                component={Welcome}
+              />
+
+              <Route 
+                exact 
+                path='/users/new' 
+                render={(routerProps) => 
+                  <UserInput {...routerProps} 
+                    user={this.props.user} 
+                    project={this.props.project} 
+                    work={this.props.work}
+                  />
+                }
+              />
+              
+              <MyRoutes 
+                user={this.props.user} 
+                project={this.props.project} 
+                work={this.props.work}
+              />   
+                   
             </Switch> 
           </div>
         </div>
