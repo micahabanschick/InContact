@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import WorkInput from '../components/works/WorkInput'
 import Works from '../components/works/Works'
+import Resume from '../pages/Resume'
 
 class WorksContainer extends Component {
 
@@ -9,6 +10,7 @@ class WorksContainer extends Component {
     return (
       <div>
       {console.log(this.props)}
+          <Resume work={this.props.work}/>
           <WorkInput user={this.props.user}/><br/>
           <Works index={this.props.work}/>
           {

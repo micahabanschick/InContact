@@ -12,7 +12,8 @@ class Works extends Component {
     }
 
     render() {
-        if (!this.props.index.length > 0) {
+        console.log(this)
+        if (!this.props.index) {
             return (
                 <h2>No Works have been recorded.</h2>
             )

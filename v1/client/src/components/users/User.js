@@ -8,21 +8,21 @@ const User = (props) => {
 // debugger
   console.log(props)
   // let account = props.accounts[props.match.params.id - 1]
-  let user = props.user//.index.filter(user => user.id === props.match.params.id)[0]
+  // let user = props.user.index.filter(user => user.id === props.match.params.id)[0]
 
-  console.log(user)
+  console.log(props.user)
   return (
     
     <div>
       <h2>
-        {user ? user.name : null} - {user ? user.email : null}
+        {props.user.name} - {props.user.email}
       </h2>
       {
       }
-      <ProjectsContainer user={user} project={props.project}/><br/>
-      <WorksContainer user={user} work={props.work}/><br/>
+      <ProjectsContainer user={props.user} index={props.project}/><br/>
+      <WorksContainer user={props.user} index={props.work}/><br/>
       <h4>Edit User</h4>
-      <UserEdit user={user}/>
+      <UserEdit user={props.user}/>
     </div>
   )
 
