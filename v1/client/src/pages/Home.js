@@ -1,30 +1,29 @@
 import React from 'react'
+// import Tabs from 'react-bootstrap/Tabs'
+// import Tab from 'react-bootstrap/Tab'
 // import {Redirect} from 'react-router-dom'
-import UserEdit from '../components/users/UserEdit'
-import ProjectsContainer from '../containers/ProjectsContainer'
-import WorksContainer from '../containers/WorksContainer'
+// import User from '../components/users/User'
+// import UserEdit from '../components/users/UserEdit'
+// import ProjectsContainer from '../containers/ProjectsContainer'
+// import WorksContainer from '../containers/WorksContainer'
+import TabsComponent from '../components/TabsComponent'
 
 const Home = (props) => {
 // debugger
   console.log(props)
   // let account = props.accounts[props.match.params.id - 1]
-  let user = props.user.index.filter(user => user.id === props.match.params.id)[0]
+  // let user = props.user.index.filter(user => user.id === props.match.params.id)[0]
 
-  console.log(user)
+  console.log(props.user)
   return (
-    
     <div>
       <h2>
-        {user ? user.name : null} - {user ? user.email : null}
+        Look at what {props.user.name} has accomplished.<br/>
+        Check out all that {props.user.name} has to offer, such as impressive projects as well as productive experiences.
       </h2>
-      {
-      }
-      <ProjectsContainer user={user}/><br/>
-      <WorksContainer user={user}/><br/>
-      <h4>Edit User</h4>
-      <UserEdit user={user}/>
+      <TabsComponent/>
     </div>
-  )
+  );
 
 
 }

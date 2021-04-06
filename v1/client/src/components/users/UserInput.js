@@ -44,7 +44,7 @@ class UserInput extends Component {
     console.log(this)
     if (this.props.user.id) {
       return (
-        <Redirect to={`/users/${this.props.user.id}`} />
+        <Redirect to={`/users/${this.props.user.id}/home`} />
       )
     } else {
     // debugger

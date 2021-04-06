@@ -72,10 +72,11 @@ class NavBar extends Component {
       return (
         <ReduxBurgerMenu styles={this.styles} isOpen={ this.props.isOpen }>
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/home`}>Home</Link>
-          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/about`}>About</Link>
-          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/contact`}>Contact</Link>
           <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/resume`}>Resume</Link>
-          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}`}>User</Link>
+          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/projects`}>Projects</Link>
+          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/contact`}>Contact</Link>
+          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/about`}>About</Link>
+          <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/profile`}>Profile</Link>
           {
           // <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/projects`}>Projects</Link>
           // <Link className="menu-item" style={this.navStyle} to={`/users/${this.props.user.id}/projects/new`}>Add Project</Link>
