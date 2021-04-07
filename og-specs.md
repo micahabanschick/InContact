@@ -8,7 +8,7 @@
 
 [x] Your app should have one HTML page to render your react-redux application
 
-[ ] There should be 5 stateless components
+[x] There should be 5 stateless components
 
 [x] There should be 3 routes
 
@@ -30,11 +30,11 @@
 
 ## Tuesday Major Goals:
 
-[ ] Succesfully create and list Projects.
+[x] Succesfully create and list Projects.
 
-[ ] Successfully create and list Works.
+[x] Successfully create and list Works.
 
-[ ] Add Works to Resume page
+[x] Add Works to Resume page
 
 ## Tuesday Minor Goals:
 
