@@ -64,7 +64,7 @@ class UserInput extends Component {
 
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Enter Email" value={this.state.email} name="email" onChange={this.handleChange} />
+              <Form.Control type="text" placeholder="Enter Email" value={this.state.email} name="email" onChange={this.handleChange} />
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>

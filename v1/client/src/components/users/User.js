@@ -1,8 +1,8 @@
 import React from 'react'
 // import {Redirect} from 'react-router-dom'
 import UserEdit from './UserEdit'
-import ProjectsContainer from '../../containers/ProjectsContainer'
-import WorksContainer from '../../containers/WorksContainer'
+// import ProjectsContainer from '../../containers/ProjectsContainer'
+// import WorksContainer from '../../containers/WorksContainer'
 
 const User = (props) => {
 // debugger

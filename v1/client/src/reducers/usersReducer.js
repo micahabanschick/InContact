@@ -5,20 +5,20 @@ const history = createBrowserHistory();
 
 const initialState = {
   index: [],
-  id: "5",
-  name: "micah",
-  email: "micah@micah.com",
+  // id: "5",
+  // name: "micah",
+  // email: "micah@micah.com",
   isAdmin: false
 };
 
 export default function usersReducer(state = initialState, action) {
   switch (action.type) {
     case 'FETCH_USERS':
-      return {users: action.payload}
+      return {user: action.payload}
     case 'ADD_USER':
       console.log(state)
-      console.log(action.payload.data)
-      history.push(`/users/${action.payload.data.id}/home`)
+      console.log(action)
+      // history.push(`/users/${action.payload.data.id}/home`)
       return {...state, ...action.payload.data, ...action.payload.data.attributes, index: [...state.index, action.payload]}
     case 'EDIT_USER':
       console.log(state)
