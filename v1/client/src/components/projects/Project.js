@@ -2,28 +2,30 @@ import React from 'react'
 import ProjectEdit from './ProjectEdit'
 import {connect} from 'react-redux'
 import {deleteProject} from '../../actions/projects/deleteProject'
+import Container from 'react-bootstrap/Container'
 
 const Project = (props) => {
 // debugger
   console.log(props)
-  // let account = props.accounts[props.match.params.id - 1]
-  let project = props.projects.filter(project => project.id === props.match.params.id)[0]
 
-  let handleDelete = (work) => {
-    this.props.deleteProject(project.id, project.user_id)
+  let {id, title, description, demo, tools, length, userId} = props.project
+
+  let handleDelete = (project) => {
+    props.deleteProject(project.id, project.userId)
   }
 
-  console.log(project)
-  return (
+  let style = {
+    background: "rgb(111,205,81)",
+    padding: "3em"
+  }
 
-    <div>
-      <h2>
-        {project ? project.title : null} - {project ? project.description : null}
-      </h2>
-      <h4>Edit Project</h4>
-      <ProjectEdit project={project}/>
-      <button onClick={() => handleDelete(project)}>Delete</button>
-    </div>
+  console.log(props.project)
+  return (
+    <Container style={style}>
+      <h2>{id}<br/>{title}<br/>{description}<br/>{demo}<br/>{tools}<br/>{userId}</h2>
+      <ProjectEdit project={props.project}/>
+      <button onClick={() => handleDelete(props.project)}>Delete</button>
+    </Container>
   )
 
 
