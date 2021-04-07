@@ -11,8 +11,8 @@ class WorksContainer extends Component {
       <div>
       {console.log(this.props)}
           <Resume work={this.props.work}/>
-          <WorkInput user={this.props.user}/><br/>
-          <Works index={this.props.work}/>
+          <WorkInput work={this.props.work}/><br/>
+          <Works work={this.props.work}/>
           {
             console.log(this.props.match)
           }

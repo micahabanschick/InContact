@@ -13,7 +13,7 @@ class Works extends Component {
 
     render() {
         console.log(this)
-        if (!this.props.index) {
+        if (!this.props.work.index.id) {
             return (
                 <h2>No Works have been recorded.</h2>
             )
@@ -22,7 +22,7 @@ class Works extends Component {
                 <div>
                 {console.log(this)}
                     { 
-                        this.props.index.map(work => 
+                        this.props.work.index.map(work => 
                             <li key={work.id}>
                             <Link to={`/works/${work.id}`}>{work.title} - ${work.organization}</Link>
                             <button onClick={() => this.handleDelete(work)}>Delete</button>

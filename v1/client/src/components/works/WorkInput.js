@@ -18,7 +18,7 @@ class WorkInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.addWork(this.state, this.props.user.id)
+    this.props.addWork(this.state, this.props.work.userId)
     console.log(this.props)
     console.log(this.state)
     // this.setState({
@@ -49,12 +49,12 @@ class WorkInput extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    user: state.user,
-    work: state.work
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     user: state.user,
+//     work: state.work
+//   }
+// }
 
 
-export default connect(mapStateToProps, {addWork})(WorkInput)
+export default connect(null, {addWork})(WorkInput)
