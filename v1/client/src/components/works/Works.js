@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {deleteWork} from '../../actions/works/deleteWork'
+import Work from './Work'
 
 class Works extends Component {
 
@@ -13,7 +14,7 @@ class Works extends Component {
 
     render() {
         console.log(this)
-        if (!this.props.work.index.id) {
+        if (!this.props.work.index.length) {
             return (
                 <h2>No Works have been recorded.</h2>
             )
@@ -24,10 +25,10 @@ class Works extends Component {
                     { 
                         this.props.work.index.map(work => 
                             <li key={work.id}>
-                            <Link to={`/works/${work.id}`}>{work.title} - ${work.organization}</Link>
-                            <button onClick={() => this.handleDelete(work)}>Delete</button>
-                            </li> 
-                        )
+                                <Work work={work}/>
+                                </li> 
+                                )
+                                // <button onClick={() => this.handleDelete(work)}>Delete</button>
                     }
                 </div>
 

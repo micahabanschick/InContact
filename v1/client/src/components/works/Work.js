@@ -2,28 +2,31 @@ import React from 'react'
 import WorkEdit from './WorkEdit'
 import {connect} from 'react-redux'
 import {deleteWork} from '../../actions/works/deleteWork'
+import Container from 'react-bootstrap/Container'
 
 const Work = (props) => {
 
   console.log(props)
-  // let account = props.accounts[props.match.params.id - 1]
-  let work = props.works.filter(work => work.id === props.match.params.id)[0]
+  
+  let {id, title, organization, length, userId} = props.work
 
   let handleDelete = (work) => {
-    this.props.deleteWork(work.id, work.user_id)
+    props.deleteWork(work.id, work.userId)
   }
 
-  console.log(work)
+  let style = {
+    background: "rgb(111,205,81)",
+    padding: "3em"
+  }
+
+  console.log(props.work)
   return (
 
-    <div>
-      <h2>
-        {work ? work.title : null} - {work ? work.organization : null}
-      </h2>
-      <h4>Edit Work</h4>
-      <WorkEdit work={work}/>
-      <button onClick={() => handleDelete(work)}>Delete</button>
-    </div>
+    <Container style={style}>
+      <h2>{id}<br/>{title}<br/>{organization}<br/>{userId}</h2>
+      <WorkEdit work={props.work}/>
+      <button onClick={() => handleDelete(props.work)}>Delete</button>
+    </Container>
   )
 
 
