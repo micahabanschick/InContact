@@ -21,7 +21,10 @@ const Home = (props) => {
         Look at what {props.user.name} has accomplished.<br/>
         Check out all that {props.user.name} has to offer, such as impressive projects as well as productive experiences.
       </h2>
-      <TabsComponent/>
+      <TabsComponent 
+        user={props.user} 
+        project={props.project} 
+        work={props.work}/>
     </div>
   );
 

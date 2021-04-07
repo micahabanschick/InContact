@@ -1,5 +1,5 @@
 import React from 'react'
-import WorksContainer from '../containers/WorksContainer'
+// import WorksContainer from '../containers/WorksContainer'
 
 const Resume = (props) => {
 // debugger
@@ -14,7 +14,7 @@ const Resume = (props) => {
       <h2>
         {props.work.userId}
       </h2>
-    {
+      {
         // <WorksContainer work={work} work={props.work}/><br/>
       }
     </div>
