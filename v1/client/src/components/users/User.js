@@ -18,9 +18,9 @@ const User = (props) => {
         {props.user.name} - {props.user.email}
       </h2>
       {
+        // <ProjectsContainer user={props.user} index={props.project}/><br/>
+        // <WorksContainer user={props.user} index={props.work}/><br/>
       }
-      <ProjectsContainer user={props.user} index={props.project}/><br/>
-      <WorksContainer user={props.user} index={props.work}/><br/>
       <h4>Edit User</h4>
       <UserEdit user={props.user}/>
     </div>

@@ -49,9 +49,9 @@ class UsersContainer extends Component {
                 path='/users/new' 
                 render={(routerProps) => 
                   <UserInput {...routerProps} 
-                    user={this.props.user} 
-                    project={this.props.project} 
-                    work={this.props.work}
+                    // user={this.props.user} 
+                    // project={this.props.project} 
+                    // work={this.props.work}
                   />
                 }
               />
