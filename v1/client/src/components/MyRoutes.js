@@ -15,7 +15,9 @@ const MyRoutes = (props) => {
   // let user = props.user.index.filter(user => user.id === props.match.params.id)[0]
 
   return (
+
     <Switch>
+
       <Route 
         exact 
         path='/users/:id/home' 
@@ -45,8 +47,8 @@ const MyRoutes = (props) => {
         path='/users/:id/resume' 
         render={(routerProps) => 
           <WorksContainer {...routerProps} 
-            user={props.user} 
-            project={props.project} 
+            // user={props.user} 
+            // project={props.project} 
             work={props.work}
           />
         }
@@ -57,9 +59,9 @@ const MyRoutes = (props) => {
         path='/users/:id/projects' 
         render={(routerProps) => 
           <ProjectsContainer {...routerProps} 
-            user={props.user} 
+            // user={props.user} 
+            // work={props.work}
             project={props.project} 
-            work={props.work}
           />
         }
       />
@@ -87,7 +89,9 @@ const MyRoutes = (props) => {
     {      
       // <Route exact path='/users' render={(routerProps) => <Users {...routerProps} user={props.user}/>}/>
     }
+
     </Switch> 
+    
   )
 }
 
