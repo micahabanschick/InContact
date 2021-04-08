@@ -24,7 +24,7 @@
 
 [x] Your application should have some minimal styling: feel free to stick to a framework (like react-bootstrap), but if you want to write (additional) CSS yourself, go for it!
 
-[ ] Once your app is complete, fill out this checklist.
+[x] Once your app is complete, fill out this checklist.
 
 [x] Go wild! These are only the basic requirements — you're free to add on as much stuff as you'd like.
 

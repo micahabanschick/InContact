@@ -1,7 +1,7 @@
 // import { v5 as uuidv5 } from 'uuid';
-import { createBrowserHistory } from 'history';
+// import { createBrowserHistory } from 'history';
 
-const history = createBrowserHistory();
+// const history = createBrowserHistory();
 
 const initialState = {
   index: [],
@@ -30,7 +30,7 @@ export default function usersReducer(state = initialState, action) {
       }
       console.log(action.payload)
       console.log(user)
-      return Object.assign(state, user.data, {index: [...state.index, user.data]})
+      return Object.assign(state, action.payload.data, action.payload.data.attributes, {index: [...state.index, action.payload.data]})
     // case 'ADD_PROJECT':
     //   console.log(state)
     //   let user2;
