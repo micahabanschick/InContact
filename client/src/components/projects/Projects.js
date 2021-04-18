@@ -14,7 +14,7 @@ class Projects extends Component {
         this.props.deleteProject(project.id, project.userId)
     }
 
-    clickStar = () => {
+    handleStar = () => {
         if (this.state.starred === false) {
             this.setState((prevState) => {
                 prevState.starred = true
@@ -35,7 +35,7 @@ class Projects extends Component {
         } else if (this.state.starred === false) {
             return (
                 <div>
-                    <button onClick={this.clickStar()}></button>
+                    <button onClick={this.handleStar()}></button>
                     {
                         this.props.project.index.filter(pro => pro.starred === false).map(project =>
                             <li key={project.id}>
@@ -49,7 +49,7 @@ class Projects extends Component {
         } else {
             return (
                 <div>
-                    <button onClick={this.clickStar()}></button>
+                    <button onClick={this.handleStar()}></button>
                     {
                         this.props.project.index.filter(pro => pro.starred === true).map(project =>
                             <li key={project.id}>
