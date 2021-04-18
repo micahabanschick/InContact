@@ -46,12 +46,12 @@ class Projects extends Component {
             return (
                 <h2>No Projects have been recorded.</h2>
             )
-        } else if (!this.state.starsOnly) {
+        } else if (!!this.state.starsOnly) {
             return (
                 <div>
                     <button onClick={this.toggleStarsOnly()}></button>
                     {
-                        this.props.project.index.map(project =>
+                        this.props.project.index.filter(pro => pro.starred === true).map(project =>
                             <li key={project.id}>
                                 <Project 
                                     project={project}
@@ -68,7 +68,7 @@ class Projects extends Component {
                 <div>
                     <button onClick={this.toggleStarsOnly()}></button>
                     {
-                        this.props.project.index.filter(pro => pro.starred === true).map(project =>
+                        this.props.project.index.map(project =>
                             <li key={project.id}>
                                 <Project 
                                     project={project}

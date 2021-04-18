@@ -8,7 +8,7 @@ const Project = (props) => {
 // debugger
   console.log(props)
 
-  let {id, title, description, demo, tools, length, userId} = props.project
+  let {id, title, description, demo, tools, userId} = props.project
 
   let handleDelete = (project) => {
     props.deleteProject(project.id, project.userId)
@@ -19,18 +19,15 @@ const Project = (props) => {
     padding: "3em"
   }
 
-  const clickStar = (event) => {
-    if (props.starred === false) {
-      props.starred = true
-    } else {
-      props.starred = false
-    }
+  const handleStar = (event) => {
+    event.preventDefault()
+    this.props.handleStar(this.props.project)
   }
 
   console.log(props.project)
   return (
     <Container style={style}>
-      <button onClick={clickStar()}>{props.starred}</button>
+      <button onClick={handleStar()}>Star/Unstar</button>
       <h2>{id}<br/>{title}<br/>{description}<br/>{demo}<br/>{tools}<br/>{userId}</h2>
       <ProjectEdit project={props.project}/>
       <button onClick={() => handleDelete(props.project)}>Delete</button>
