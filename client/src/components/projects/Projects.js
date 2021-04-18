@@ -7,7 +7,10 @@ import Project from './Project'
 class Projects extends Component {
 
     state = {
-        starred: false
+        projects: this.props.project.index.map(p => {
+            return Object.assign({}, p, {isStarred: false})
+        }),
+        starsOnly: false
     }
 
     handleDelete = (project) => {
