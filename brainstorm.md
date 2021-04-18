@@ -84,24 +84,24 @@ function foo() {
     3. Avoid redux/persistence
 
     - Data (state/props): 
-        1. Projects{state}: this.state.starsOnly = true/false
-        2. Projects{state}: this.state.projects 
+[x]        1. Projects{state}: this.state.starsOnly = true/false
+[x]        2. Projects{state}: this.state.projects 
             i. add projects in the Projects state with an additional attribute of isStarred
             ii. this.props.project.index.map(p => {
                 return Object.assign({}, p, {isStarred: false})
             })
-        3. Project{props}: this.handleStar()
+[ ]        3. Project{props}: this.handleStar()
             i. use this.props.handleStar(**this.props.project**) to pass any changes from a project to Projects state 
 
     - Display (Rendering Logic/JSX): {}
 
     - Events (listeners/handlers): 
-        1. Projects: this.toggleStarsOnly()
+[x]        1. Projects: this.toggleStarsOnly()
             i. onClick will toggle between showing all projects and only those where isStarred = true
-        2. Projects: this.handleStar(**project**) 
+[x]     2. Projects: this.handleStar(**project**) 
             i. takes in a project as an argument and marks its state starred with setState on Projects 
         
-        3. Project: this.handleStar(event) 
+[ ]        3. Project: this.handleStar(event) 
             i. onClick will add/remove the isStarred status from the Projects state from inside the Project component
 
     - Data => Display => Event => Data => Display

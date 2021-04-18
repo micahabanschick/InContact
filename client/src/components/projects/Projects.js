@@ -17,15 +17,26 @@ class Projects extends Component {
         this.props.deleteProject(project.id, project.userId)
     }
 
-    handleStar = () => {
-        if (this.state.starred === false) {
-            this.setState((prevState) => {
-                prevState.starred = true
-            })
+    handleStar = (project) => {
+        let newProjects = this.state.projects.map(p => {
+            if (p === project) {
+                if (!p.isStarred) {
+                    p.isStarred = true
+                } else {
+                    p.isStarred = false
+                }
+            }
+            return p
+        })
+        this.setState({projects: newProjects})
+    }
+
+    toggleStarsOnly = (event) => {
+        event.preventDefault()
+        if (!this.state.starsOnly) {
+            this.setState({starsOnly: true})
         } else {
-            this.setState((prevState) => {
-                prevState.starred = false
-            })
+            this.setState({starsOnly: false})
         }
     }
 
@@ -35,14 +46,17 @@ class Projects extends Component {
             return (
                 <h2>No Projects have been recorded.</h2>
             )
-        } else if (this.state.starred === false) {
+        } else if (!this.state.starsOnly) {
             return (
                 <div>
-                    <button onClick={this.handleStar()}></button>
+                    <button onClick={this.toggleStarsOnly()}></button>
                     {
-                        this.props.project.index.filter(pro => pro.starred === false).map(project =>
+                        this.props.project.index.map(project =>
                             <li key={project.id}>
-                                <Project project={project}/>
+                                <Project 
+                                    project={project}
+                                    handleStar={this.handleStar}
+                                />
                             </li> 
                         )
                                 // <button onClick={() => this.handleDelete(project)}>Delete</button>
@@ -52,11 +66,14 @@ class Projects extends Component {
         } else {
             return (
                 <div>
-                    <button onClick={this.handleStar()}></button>
+                    <button onClick={this.toggleStarsOnly()}></button>
                     {
                         this.props.project.index.filter(pro => pro.starred === true).map(project =>
                             <li key={project.id}>
-                                <Project project={project}/>
+                                <Project 
+                                    project={project}
+                                    handleStar={this.handleStar}
+                                />
                             </li> 
                         )
                                 // <button onClick={() => this.handleDelete(project)}>Delete</button>
