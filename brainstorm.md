@@ -90,7 +90,7 @@ function foo() {
             ii. this.props.project.index.map(p => {
                 return Object.assign({}, p, {isStarred: false})
             })
-[ ]        3. Project{props}: this.handleStar()
+[x]        3. Project{props}: this.handleStar()
             i. use this.props.handleStar(**this.props.project**) to pass any changes from a project to Projects state 
 
     - Display (Rendering Logic/JSX): {}
@@ -101,7 +101,7 @@ function foo() {
 [x]     2. Projects: this.handleStar(**project**) 
             i. takes in a project as an argument and marks its state starred with setState on Projects 
         
-[ ]        3. Project: this.handleStar(event) 
+[x]        3. Project: this.handleStar(event) 
             i. onClick will add/remove the isStarred status from the Projects state from inside the Project component
 
     - Data => Display => Event => Data => Display
