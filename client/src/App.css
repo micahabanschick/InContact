@@ -22,6 +22,10 @@ body  {
   color: white;
 }
 
+.App li {
+  list-style: none
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

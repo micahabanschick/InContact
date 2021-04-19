@@ -21,13 +21,21 @@ const Project = (props) => {
 
   const handleStar = (event) => {
     event.preventDefault()
-    this.props.handleStar(this.props.project)
+    console.log(props.project)
+    if (!!props.project.isStarred) {
+      event.target.style.backgroundColor = 'white'
+    } else {
+      event.target.style.backgroundColor = 'yellow'
+    }
+    // event.target.style.backgroundColor = 'yellow'
+    console.log(props.project)
+    props.handleStar(props.project)
   }
 
   console.log(props.project)
   return (
     <Container style={style}>
-      <button onClick={handleStar()}>Star/Unstar</button>
+      <button style={{backgroundColor: "yellow"}} onClick={handleStar}>Star/Unstar</button>
       <h2>{id}<br/>{title}<br/>{description}<br/>{demo}<br/>{tools}<br/>{userId}</h2>
       <ProjectEdit project={props.project}/>
       <button onClick={() => handleDelete(props.project)}>Delete</button>

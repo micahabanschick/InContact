@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import Form from 'react-bootstrap/Form'
 import {deleteProject} from '../../actions/projects/deleteProject'
 import Project from './Project'
 
@@ -19,20 +20,21 @@ class Projects extends Component {
 
     handleStar = (project) => {
         let newProjects = this.state.projects.map(p => {
-            if (p === project) {
-                if (!p.isStarred) {
-                    p.isStarred = true
-                } else {
+            if (p.id === project.id) {
+                if (!!p.isStarred) {
                     p.isStarred = false
+                } else {
+                    p.isStarred = true
                 }
             }
             return p
         })
+        console.log(newProjects)
         this.setState({projects: newProjects})
     }
 
     toggleStarsOnly = (event) => {
-        event.preventDefault()
+        // event.preventDefault()
         if (!this.state.starsOnly) {
             this.setState({starsOnly: true})
         } else {
@@ -49,9 +51,11 @@ class Projects extends Component {
         } else if (!!this.state.starsOnly) {
             return (
                 <div>
-                    <button onClick={this.toggleStarsOnly()}></button>
+                    <Form.Group controlId="formBasicCheckbox">
+                        <Form.Check type="switch" label="Show/Hide Stars" onClick={this.toggleStarsOnly} />
+                    </Form.Group>
                     {
-                        this.props.project.index.filter(pro => pro.starred === true).map(project =>
+                        this.state.projects.filter(pro => pro.isStarred === true).map(project =>
                             <li key={project.id}>
                                 <Project 
                                     project={project}
@@ -66,9 +70,11 @@ class Projects extends Component {
         } else {
             return (
                 <div>
-                    <button onClick={this.toggleStarsOnly()}></button>
+                    <Form.Group controlId="formBasicCheckbox">
+                        <Form.Check type="switch" label="Show/Hide Stars" onClick={this.toggleStarsOnly} />
+                    </Form.Group>
                     {
-                        this.props.project.index.map(project =>
+                        this.state.projects.map(project =>
                             <li key={project.id}>
                                 <Project 
                                     project={project}
